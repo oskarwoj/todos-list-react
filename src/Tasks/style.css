@@ -13,7 +13,7 @@
   border-bottom: 1px solid #ddd;
 }
 
-.task__item--hide {
+.tasks__item--hidden {
   display: none;
 }
 
