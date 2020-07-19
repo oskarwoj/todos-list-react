@@ -1,13 +1,13 @@
 import React from "react";
 import "./style.css";
 
-const Tasks = ({ tasks, hideDoneTasks }) => (
+const Tasks = ({ tasks, hideDone }) => (
   <ul className="tasks">
     {tasks.map(({ id, content, done }) => (
       <li
         key={id}
         className={`tasks__item${
-          done && hideDoneTasks ? "tasks__item--hidden" : ""
+          done && hideDone ? "tasks__item--hidden" : ""
         }`}
       >
         <button className="tasks__button tasks__button--toogleDone">
