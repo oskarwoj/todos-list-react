@@ -9,9 +9,9 @@ import Container from "./Container";
 function App() {
   const [hideDone, setHideDone] = useState(false);
   const [tasks, setTasks] = useState(
-    JSON.parse(localStorage.getItem("tasks") === null)
-      ? []
-      : JSON.parse(localStorage.getItem("tasks"))
+    JSON.parse(
+      localStorage.getItem("tasks") || JSON.parse(localStorage.getItem("tasks"))
+    )
   );
 
   const toogleHideDone = () => {
