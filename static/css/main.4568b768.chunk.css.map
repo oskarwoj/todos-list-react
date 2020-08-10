@@ -1,0 +1,1 @@
+{"version":3,"sources":["index.css"],"names":[],"mappings":"AAAA,KACE,qBACF,CAEA,iBAGE,kBACF,CAEA,KACE,mCAAqC,CACrC,qBACF","file":"main.4568b768.chunk.css","sourcesContent":["html {\n  box-sizing: border-box;\n}\n\n*,\n::before,\n::after {\n  box-sizing: inherit;\n}\n\nbody {\n  font-family: \"Montserrat\", sans-serif;\n  background-color: #eee;\n}\n"]}
