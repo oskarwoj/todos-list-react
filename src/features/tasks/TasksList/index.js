@@ -1,9 +1,9 @@
 import React from "react";
-import { TasksList, Item, Content, Button } from "./styled";
+import { TaskList, Item, Content, Button } from "./styled";
 
-const Tasks = ({ tasks, hideDone, removeTask, toogleTaskDone }) => {
+const TasksList = ({ tasks, hideDone, removeTask, toogleTaskDone }) => {
   return (
-    <TasksList>
+    <TaskList>
       {tasks.map(({ id, content, done }) => (
         <Item key={id} hidden={done && hideDone}>
           <Button toogleDone onClick={() => toogleTaskDone(id)}>
@@ -15,8 +15,8 @@ const Tasks = ({ tasks, hideDone, removeTask, toogleTaskDone }) => {
           </Button>
         </Item>
       ))}
-    </TasksList>
+    </TaskList>
   );
 };
 
-export default Tasks;
+export default TasksList;
