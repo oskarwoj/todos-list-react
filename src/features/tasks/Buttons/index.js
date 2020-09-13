@@ -1,22 +1,31 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Button, Container } from "./styled";
-import { selectTasks, toogleHideDone, setAllDone } from "../tasksSlice";
+import {
+  toogleHideDone,
+  setAllDone,
+  selectAreTasksEmpty,
+  selectIsEveryTaskDone,
+  selectHideDone,
+} from "../tasksSlice";
 
 const Buttons = () => {
-  const { tasks, hideDone } = useSelector(selectTasks);
+  const areTaskEmpty = useSelector(selectAreTasksEmpty);
+  const isEveryTaskDone = useSelector(selectIsEveryTaskDone);
+  const hideDone = useSelector(selectHideDone);
+
   const dispatch = useDispatch();
 
   return (
     <Container>
-      {tasks.length > 0 && (
+      {!areTaskEmpty > 0 && (
         <>
           <Button onClick={() => dispatch(toogleHideDone())}>
             {hideDone ? "Pokaż" : "Ukryj"} ukończone
           </Button>
           <Button
             onClick={() => dispatch(setAllDone())}
-            disabled={tasks.every(({ done }) => done)}
+            disabled={isEveryTaskDone}
           >
             Ukończ wszystkie
           </Button>

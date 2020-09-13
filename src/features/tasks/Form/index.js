@@ -5,15 +5,14 @@ import { addTask } from "../tasksSlice";
 import { nanoid } from "@reduxjs/toolkit";
 
 const Form = () => {
-  const inputRef = useRef(null);
   const [newTaskContent, setNewTaskContent] = useState("");
+  const inputRef = useRef(null);
+
+  const dispatch = useDispatch();
 
   const focusInput = () => {
     inputRef.current.focus();
   };
-
-  const dispatch = useDispatch();
-
   const onFormSubmit = (event) => {
     event.preventDefault();
     if (newTaskContent.trim() !== "") {
