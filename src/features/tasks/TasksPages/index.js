@@ -1,13 +1,13 @@
 import React from "react";
-import Form from "./Form";
+import Form from "../TasksPages/Form";
 import TaskList from "./TasksList";
-import Buttons from "./Buttons";
-import Section from "../../common/Section";
-import Header from "../../common/Header";
-import Container from "../../common/Container";
-import { GlobalStyle } from "../../GlobalStyle";
+import Buttons from "../TasksPages/Buttons";
+import Section from "../../../common/Section";
+import Header from "../../../common/Header";
+import Container from "../../../common/Container";
+import { GlobalStyle } from "../../../GlobalStyle";
 
-function Tasks() {
+function TasksPages() {
   return (
     <Container>
       <GlobalStyle />
@@ -22,4 +22,4 @@ function Tasks() {
   );
 }
 
-export default Tasks;
+export default TasksPages;
