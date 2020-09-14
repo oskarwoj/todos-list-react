@@ -10,10 +10,6 @@ export const StyledForm = styled.form`
   }
 `;
 
-export const Input = styled.input`
-  padding: 10px;
-  border: 1px solid #ddd;
-`;
 export const Button = styled.button`
   padding: 10px;
   background-color: hsl(180, 100%, 25%);

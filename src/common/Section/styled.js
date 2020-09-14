@@ -22,6 +22,7 @@ export const Header = styled.div`
 
 export const Title = styled.div`
   font-size: 20px;
+  font-weight: 700;
   margin: 0;
 `;
 
