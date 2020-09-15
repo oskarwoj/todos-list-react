@@ -25,3 +25,10 @@ export const Button = styled.button`
     background-color: hsl(180, 100%, 35%);
   }
 `;
+
+export const StyledInput = styled.input`
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  background-color: #eee;
+`;

@@ -10,7 +10,7 @@ export const StyledNavLink = styled(NavLink).attrs(() => ({
   color: white;
 
   &.${activeClassName} {
-    filter: brightness(90%);
+    filter: brightness(80%);
   }
 `;
 

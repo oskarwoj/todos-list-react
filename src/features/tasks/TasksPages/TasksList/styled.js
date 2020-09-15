@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+import { Link } from "react-router-dom";
 
 export const TaskList = styled.ul`
   list-style: none;
@@ -56,4 +57,16 @@ export const Button = styled.button`
         background-color: hsl(348, 83%, 70%);
       }
     `}
+`;
+export const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: black;
+  transition: 0.3s;
+
+  &:hover {
+    filter: brightness(120%);
+  }
+  &:active {
+    filter: brightness(140%);
+  }
 `;

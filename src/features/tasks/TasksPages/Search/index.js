@@ -1,6 +1,6 @@
 import React from "react";
 import { useHistory, useLocation } from "react-router-dom";
-import Input from "../../Input";
+import { StyledInput } from "../Form/styled";
 import searchQueryParamName from "../../searchQueryParamName";
 import { Wrapper } from "./styled";
 
@@ -23,7 +23,7 @@ export default () => {
 
   return (
     <Wrapper>
-      <Input
+      <StyledInput
         placeholder="Filtruj zadania"
         value={query || ""}
         onChange={onInputChange}
