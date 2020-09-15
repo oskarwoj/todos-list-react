@@ -25,6 +25,10 @@ const tasksSlice = createSlice({
     removeAllTasks: (state) => {
       state.tasks = [];
     },
+    editTask: ({ tasks }, { payload: { id, content } }) => {
+      const index = tasks.findIndex((task) => task.id === id);
+      tasks[index].content = content;
+    },
     setAllDone: (state) => {
       state.tasks = state.tasks.map((task) => ({ ...task, done: true }));
     },
@@ -47,6 +51,7 @@ export const {
   toogleTaskDone,
   setAllDone,
   removeTask,
+  editTask,
   fetchExampleTasks,
   setTasks,
   setExampleTasksLoading,

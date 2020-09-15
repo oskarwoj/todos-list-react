@@ -31,32 +31,45 @@ export const Content = styled.span`
 `;
 
 export const Button = styled.button`
-  border: none;
-  color: white;
   width: 30px;
   height: 30px;
-  padding: 0;
-  transition: background 1s;
+  border: none;
+  transition: 0.3s;
+  color: white;
+  font-size: 22px;
+  padding: 0px;
+  cursor: pointer;
 
   ${({ toogleDone }) =>
     toogleDone &&
     css`
-      background-color: hsl(120, 61%, 34%);
-
-      &:hover {
-        background-color: hsl(120, 61%, 70%);
-      }
+      background-color: green;
     `}
-
-  ${({ remove }) =>
+  ${({ edit }) =>
+    edit &&
+    css`
+      background-color: orange;
+    `}
+    ${({ save }) =>
+    save &&
+    css`
+      background-color: orange;
+      font-size: unset;
+      width: unset;
+      padding: 0px 10px;
+    `}
+    ${({ remove }) =>
     remove &&
     css`
-      background-color: hsl(348, 83%, 47%);
-
-      &:hover {
-        background-color: hsl(348, 83%, 70%);
-      }
+      background-color: red;
     `}
+
+    &:hover {
+    filter: brightness(120%);
+  }
+  &:active {
+    filter: brightness(140%);
+  }
 `;
 export const StyledLink = styled(Link)`
   text-decoration: none;
@@ -69,4 +82,19 @@ export const StyledLink = styled(Link)`
   &:active {
     filter: brightness(140%);
   }
+`;
+
+export const EditableContent = styled.div`
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-gap: 10px;
+  align-items: center;
+`;
+
+export const ContentInput = styled.input`
+  width: 100%;
+  padding: 5px;
+  border: 1px solid grey;
+  background-color: orange;
+  color: grey;
 `;
