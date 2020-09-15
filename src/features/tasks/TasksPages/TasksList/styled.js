@@ -8,6 +8,7 @@ export const TaskList = styled.ul`
 `;
 
 export const Item = styled.li`
+  border-bottom: 3px solid ${({ theme }) => theme.background};
   display: grid;
   grid-template-columns: auto 1fr auto;
   grid-gap: 10px;
@@ -35,7 +36,7 @@ export const Button = styled.button`
   height: 30px;
   border: none;
   transition: 0.3s;
-  color: white;
+  color: ${({ theme }) => theme.interactionButtonText};
   font-size: 22px;
   padding: 0px;
   cursor: pointer;
@@ -43,17 +44,17 @@ export const Button = styled.button`
   ${({ toogleDone }) =>
     toogleDone &&
     css`
-      background-color: green;
+      background-color: ${({ theme }) => theme.check};
     `}
   ${({ edit }) =>
     edit &&
     css`
-      background-color: orange;
+      background-color: ${({ theme }) => theme.edit};
     `}
     ${({ save }) =>
     save &&
     css`
-      background-color: orange;
+      background-color: ${({ theme }) => theme.edit};
       font-size: unset;
       width: unset;
       padding: 0px 10px;
@@ -61,7 +62,7 @@ export const Button = styled.button`
     ${({ remove }) =>
     remove &&
     css`
-      background-color: red;
+      background-color: ${({ theme }) => theme.remove};
     `}
 
     &:hover {
@@ -73,7 +74,7 @@ export const Button = styled.button`
 `;
 export const StyledLink = styled(Link)`
   text-decoration: none;
-  color: black;
+  color: ${({ theme }) => theme.buttonBackground};
   transition: 0.3s;
 
   &:hover {
@@ -94,7 +95,7 @@ export const EditableContent = styled.div`
 export const ContentInput = styled.input`
   width: 100%;
   padding: 5px;
-  border: 1px solid grey;
-  background-color: orange;
+  border: 1px solid ${({ theme }) => theme.shadow};
+  background-color: ${({ theme }) => theme.background};
   color: grey;
 `;

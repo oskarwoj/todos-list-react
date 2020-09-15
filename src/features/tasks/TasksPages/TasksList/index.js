@@ -48,7 +48,6 @@ const TasksList = () => {
           <Button toogleDone onClick={() => dispatch(toogleTaskDone(id))}>
             {done ? "✔" : ""}
           </Button>
-
           {editableId === id ? (
             <EditableContent as="form">
               <ContentInput

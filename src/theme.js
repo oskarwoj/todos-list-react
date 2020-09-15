@@ -1,0 +1,28 @@
+export const theme = {
+  normal: {
+    buttonBackground: "teal",
+    sectionBackground: "#fff",
+    shadow: "#ccc",
+    background: "#eee",
+    transparent: "transparent",
+    check: "green",
+    remove: "red",
+    edit: "orange",
+    outline: "black",
+    interactionButtonText: "#fff",
+    text: "black",
+  },
+  dark: {
+    buttonBackground: "#8DB9B9",
+    sectionBackground: "#3C4453",
+    shadow: "black",
+    background: "#272A30",
+    transparent: "transparent",
+    check: "green",
+    remove: "red",
+    edit: "orange",
+    outline: "grey",
+    interactionButtonText: "#fff",
+    text: "#EBEDEF",
+  },
+};

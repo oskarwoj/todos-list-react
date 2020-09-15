@@ -12,8 +12,8 @@ export const StyledForm = styled.form`
 
 export const Button = styled.button`
   padding: 10px;
-  background-color: hsl(180, 100%, 25%);
-  color: white;
+  background-color: ${({ theme }) => theme.buttonBackground};
+  color: ${({ theme }) => theme.sectionBackground};
   border: none;
   transition: background 0.5s, transform 0.5s;
 
