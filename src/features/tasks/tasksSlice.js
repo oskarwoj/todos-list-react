@@ -6,31 +6,27 @@ const tasksSlice = createSlice({
   initialState: {
     tasks: getTasksFromLocalStorage(),
     hideDone: false,
+    query: "",
   },
   reducers: {
-    addTask: ({ tasks }, { payload: task }) => {
-      tasks.push(task);
+    addTask: ({ tasks }, { payload }) => {
+      tasks.push(payload);
+    },
+    toogleTaskDone: ({ tasks }, { payload }) => {
+      const index = tasks.findIndex((task) => task.id === payload);
+      tasks[index].done = !tasks[index].done;
     },
     toogleHideDone: (state) => {
       state.hideDone = !state.hideDone;
     },
-    toogleTaskDone: ({ tasks }, { payload: taskId }) => {
-      const index = tasks.findIndex(({ id }) => id === taskId);
-      tasks[index].done = !tasks[index].done;
+    removeTask: (state, { payload }) => {
+      state.tasks = state.tasks.filter((task) => task.id !== payload);
     },
-
-    removeTask: ({ tasks }, { payload: taskId }) => {
-      const index = tasks.findIndex(({ id }) => id === taskId);
-      tasks.splice(index, 1);
-    },
-
-    setAllDone: ({ tasks }) => {
-      for (const task of tasks) {
-        task.done = true;
-      }
+    setAllDone: (state) => {
+      state.tasks = state.tasks.map((task) => ({ ...task, done: true }));
     },
     fetchExampleTasks: () => {},
-    setTasks: (state, { paylod: tasks }) => {
+    setTasks: (state, { payload: tasks }) => {
       state.tasks = tasks;
     },
   },
@@ -54,8 +50,9 @@ export const selectAreTasksEmpty = (state) => selectTasks(state).length === 0;
 export const selectIsEveryTaskDone = (state) =>
   selectTasks(state).every(({ done }) => done);
 
-export const getTaskById = (state, taskId) =>
-  selectTasks(state).find(({ id }) => id === taskId);
+export const getTaskById = (state, taskId) => {
+  return selectTasks(state).find(({ id }) => id === taskId);
+};
 
 export const selectTasksByQuery = (state, query) => {
   const tasks = selectTasks(state);

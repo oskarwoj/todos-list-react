@@ -10,6 +10,7 @@ function* fetchExampleTasksHandler() {
   } catch (error) {
     yield call(alert, "Coś poszło nie tak!");
   }
+
 }
 
 function* saveTasksInLocalStorageHandler() {
