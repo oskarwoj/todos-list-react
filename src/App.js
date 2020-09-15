@@ -1,7 +1,7 @@
 import React from "react";
 import { ThemeProvider } from "styled-components";
 import { theme } from "./theme.js";
-import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
+import { HashRouter, Switch, Route, Redirect } from "react-router-dom";
 import TasksPages from "./features/tasks/TasksPages/index";
 import { useSelector } from "react-redux";
 import { selectDarkTheme } from "./common/themeSlice";
@@ -15,7 +15,7 @@ export default () => {
   return (
     <ThemeProvider theme={isDarkTheme ? theme.dark : theme.normal}>
       <GlobalStyle />
-      <BrowserRouter basename="/todos-list-react">
+      <HashRouter>
         <nav>
           <nav>
             <Nav>
@@ -42,7 +42,7 @@ export default () => {
             </Switch>
           </nav>
         </nav>
-      </BrowserRouter>
+      </HashRouter>
     </ThemeProvider>
   );
 };
