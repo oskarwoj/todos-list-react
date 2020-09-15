@@ -7,10 +7,13 @@ import {
   selectAreTasksEmpty,
   selectIsEveryTaskDone,
   selectHideDone,
+  removeAllTasks,
+  selectAreTasksUndone,
 } from "../../tasksSlice";
 
 const Buttons = () => {
   const areTaskEmpty = useSelector(selectAreTasksEmpty);
+  const areTaskUndone = useSelector(selectAreTasksUndone);
   const isEveryTaskDone = useSelector(selectIsEveryTaskDone);
   const hideDone = useSelector(selectHideDone);
 
@@ -20,7 +23,10 @@ const Buttons = () => {
     <Container>
       {!areTaskEmpty > 0 && (
         <>
-          <Button onClick={() => dispatch(toogleHideDone())}>
+          <Button
+            onClick={() => dispatch(toogleHideDone())}
+            disabled={areTaskUndone}
+          >
             {hideDone ? "Pokaż" : "Ukryj"} ukończone
           </Button>
           <Button
@@ -28,6 +34,9 @@ const Buttons = () => {
             disabled={isEveryTaskDone}
           >
             Ukończ wszystkie
+          </Button>
+          <Button onClick={() => dispatch(removeAllTasks())}>
+            Usuń wszystkie
           </Button>
         </>
       )}

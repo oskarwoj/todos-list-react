@@ -26,6 +26,7 @@ const TasksList = () => {
           <Button toogleDone onClick={() => dispatch(toogleTaskDone(id))}>
             {done ? "✔" : ""}
           </Button>
+          
           <Content done={done}>
             <StyledLink to={`/zadania/${id}`}>{content}</StyledLink>
           </Content>

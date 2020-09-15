@@ -12,7 +12,7 @@ import {
   setTasks,
   setExampleTasksLoading,
 } from "./tasksSlice";
-import { getExampleTasks } from "./getExampleTasks";
+import { getExampleTasks } from "./TasksPages/TasksList/getExampleTasks";
 import { saveTasksInLocalStorage } from "./tasksLocalStorage";
 
 function* fetchExampleTasksHandler() {
