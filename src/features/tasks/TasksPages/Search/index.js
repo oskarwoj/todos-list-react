@@ -12,8 +12,6 @@ export default () => {
   const replaceQueryParameter = useReplaceQueryParameter();
 
   const onInputChange = ({ target }) => {
-    console.log(target.value);
-
     replaceQueryParameter({
       key: searchQueryParamName,
       value: target.value.trim() !== "" ? target.value : "",
