@@ -10,10 +10,6 @@ html {
   box-sizing: inherit;
 }
 
-:focus {
-  outline: 2px solid ${({ theme }) => theme.outline};
-}
-
 body {
   font-family: "Montserrat", sans-serif;
   color: ${({ theme }) => theme.text};
