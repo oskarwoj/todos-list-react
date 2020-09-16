@@ -6,7 +6,6 @@ const tasksSlice = createSlice({
   initialState: {
     tasks: getTasksFromLocalStorage(),
     hideDone: false,
-    query: "",
   },
   reducers: {
     addTask: ({ tasks }, { payload }) => {
@@ -38,9 +37,6 @@ const tasksSlice = createSlice({
     },
     setTasksLoading: (state, { payload }) => {
       state.exampleTasksLoading = payload;
-    },
-    setQuery: (state, { payload: query }) => {
-      state.query = query;
     },
   },
 });

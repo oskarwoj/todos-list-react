@@ -17,7 +17,7 @@ import {
   editTask,
   selectTasksByQuery,
 } from "../../tasksSlice";
-import searchQueryParamName from "../../searchQueryParamName";
+import searchQueryParamName from "../searchQueryParamName";
 
 const TasksList = () => {
   const location = useLocation();

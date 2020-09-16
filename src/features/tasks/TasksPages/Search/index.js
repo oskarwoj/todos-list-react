@@ -1,11 +1,11 @@
 import React from "react";
 import { StyledInput } from "../Form/styled";
-import searchQueryParamName from "../../searchQueryParamName";
+import searchQueryParamName from "../searchQueryParamName";
 import { Wrapper } from "./styled";
 import {
   useQueryParameter,
   useReplaceQueryParameter,
-} from "../queryParameters";
+} from "./queryParameters";
 
 export default () => {
   const query = useQueryParameter(searchQueryParamName);
