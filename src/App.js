@@ -12,36 +12,33 @@ import { GlobalStyle } from "./GlobalStyle";
 
 export default () => {
   const isDarkTheme = useSelector(selectDarkTheme);
+
   return (
     <ThemeProvider theme={isDarkTheme ? theme.dark : theme.normal}>
       <GlobalStyle />
       <HashRouter>
-        <nav>
-          <nav>
-            <Nav>
-              <NavItem>
-                <StyledNavLink to="/zadania">Zadania</StyledNavLink>
-              </NavItem>
-              <NavItem>
-                <StyledNavLink to="/o-autorze">O autorze</StyledNavLink>
-              </NavItem>
-            </Nav>
-            <Switch>
-              <Route path="/zadania/:id">
-                <TaskPages />
-              </Route>
-              <Route path="/zadania">
-                <TasksPages />
-              </Route>
-              <Route path="/o-autorze">
-                <AuthorPage />
-              </Route>
-              <Route path="/">
-                <Redirect to="/zadania" />
-              </Route>
-            </Switch>
-          </nav>
-        </nav>
+        <Nav>
+          <NavItem>
+            <StyledNavLink to="/zadania">Zadania</StyledNavLink>
+          </NavItem>
+          <NavItem>
+            <StyledNavLink to="/o-autorze">O autorze</StyledNavLink>
+          </NavItem>
+        </Nav>
+        <Switch>
+          <Route path="/zadania/:id">
+            <TaskPages />
+          </Route>
+          <Route path="/zadania">
+            <TasksPages />
+          </Route>
+          <Route path="/o-autorze">
+            <AuthorPage />
+          </Route>
+          <Route path="/">
+            <Redirect to="/zadania" />
+          </Route>
+        </Switch>
       </HashRouter>
     </ThemeProvider>
   );

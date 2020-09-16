@@ -1,5 +1,4 @@
 import React from "react";
-import { useHistory, useLocation } from "react-router-dom";
 import { StyledInput } from "../Form/styled";
 import searchQueryParamName from "../../searchQueryParamName";
 import { Wrapper } from "./styled";

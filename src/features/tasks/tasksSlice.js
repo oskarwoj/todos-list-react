@@ -36,7 +36,7 @@ const tasksSlice = createSlice({
     setTasks: (state, { payload: tasks }) => {
       state.tasks = tasks;
     },
-    setExampleTasksLoading: (state, { payload }) => {
+    setTasksLoading: (state, { payload }) => {
       state.exampleTasksLoading = payload;
     },
     setQuery: (state, { payload: query }) => {
@@ -54,7 +54,7 @@ export const {
   editTask,
   fetchExampleTasks,
   setTasks,
-  setExampleTasksLoading,
+  setTasksLoading,
   removeAllTasks,
 } = tasksSlice.actions;
 

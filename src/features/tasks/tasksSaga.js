@@ -10,21 +10,21 @@ import {
   fetchExampleTasks,
   selectTasks,
   setTasks,
-  setExampleTasksLoading,
+  setTasksLoading,
 } from "./tasksSlice";
 import { getExampleTasks } from "./TasksPages/TasksList/getExampleTasks";
 import { saveTasksInLocalStorage } from "./tasksLocalStorage";
 
 function* fetchExampleTasksHandler() {
   try {
-    yield put(setExampleTasksLoading(true));
+    yield put(setTasksLoading(true));
     yield delay(1000);
     const exampleTasks = yield call(getExampleTasks);
     yield put(setTasks(exampleTasks));
-    yield put(setExampleTasksLoading(false));
+    yield put(setTasksLoading(false));
   } catch (error) {
     yield call(alert, "Coś poszło nie tak!");
-    yield put(setExampleTasksLoading(false));
+    yield put(setTasksLoading(false));
   }
 }
 
