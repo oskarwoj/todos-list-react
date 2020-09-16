@@ -7,7 +7,7 @@ export const StyledSection = styled.section`
 `;
 
 export const Header = styled.div`
-  border-bottom: 1px solid #${({ theme }) => theme.background};
+  border-bottom: 1px solid ${({ theme }) => theme.background};
   display: grid;
   grid-template-columns: auto auto;
   grid-gap: 20px;

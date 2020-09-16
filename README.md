@@ -13,8 +13,16 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 - HTML
 - CSS
-- JavaScript
+- JS
 - React
+- react-router-dom
+- react-redux
+- @reduxjs/toolkit
+- redux-saga
+- JSX
+- styled-components
+- create-react-app
+- local storage
 
 ## Available Scripts
 

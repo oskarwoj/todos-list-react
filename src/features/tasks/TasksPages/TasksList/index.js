@@ -68,13 +68,13 @@ const TasksList = () => {
                 edit
                 onClick={() => setEditableId(id) || setNewTaskName(content)}
               >
-                ✏
+              ✏
               </Button>
             </EditableContent>
           )}
 
           <Button remove onClick={() => dispatch(removeTask(id))}>
-            🗑
+          🗑
           </Button>
         </Item>
       ))}
